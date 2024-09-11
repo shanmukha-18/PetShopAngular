@@ -1,0 +1,19 @@
+.img-size {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vaccine{
+  padding-left: 5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+#timeSlots {
+  cursor: pointer;
+}

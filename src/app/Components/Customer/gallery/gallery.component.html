@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="gallery-container">
+  <div class="gallery-grid">
+      <div class="gallery-card"
+           *ngFor="let image of images; let i = index"
+           [ngStyle]="cardStyles[i]"
+           (mouseover)="onHover(i)"
+           (mouseout)="onLeave(i)">
+        <div class="gallery-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+      </div>
+    </div>
+  </div>
+           <app-footer></app-footer>

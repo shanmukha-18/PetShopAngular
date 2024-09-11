@@ -1,0 +1,15 @@
+<app-header></app-header>
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let category of categories">
+        <div class="card bg-dark text-white" [routerLink]="['/singlePetCategory', category.name]">
+          <img src="images/{{category?.name}}.jpg" alt="{{category.name}}" class="card-img" style="height: 200px; object-fit: cover;" >
+          <div class="card-img-overlay gradient-overlay">
+            <h5 class="card-title">{{category.name}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  

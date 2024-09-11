@@ -1,0 +1,32 @@
+<app-header></app-header>
+  <h1 style="text-align: center;">Vaccinations</h1>
+<div class="main">
+  <div class="vaccination-table-container">
+    <table class="vaccination-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Available</th>
+          <th class="ps-5 ms-5">Description</th>
+          <th class="ps-5 ms-5">Name</th>
+          <th class="ps-4">Price</th>
+          <th class="ps-4">Book</th> <!-- New column for actions -->
+        </tr>
+      </thead>
+      <!-- style="text-align: center;" -->
+      <tbody>
+        <tr *ngFor="let vaccination of vaccinations">
+          <td>{{ vaccination.vaccinationId }}</td>
+          <td style="text-align: center;">{{ vaccination.available }}</td>
+          <td>{{ vaccination.description }}</td>
+          <td>{{ vaccination.name }}</td>
+          <td style="color: green;">{{ vaccination.price | currency:'INR' }}</td>
+          <td>
+            <button class="btn btn-dark" (click)="bookNow(vaccination)">Book Appointment</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

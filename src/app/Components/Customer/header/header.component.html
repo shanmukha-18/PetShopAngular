@@ -1,0 +1,84 @@
+
+<div class="navbar">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo"  height="55">
+            </div>
+ 
+            <!-- Navigation Links -->
+            <div class="nav-links d-flex justify-content-center flex-grow-1">
+                <div class="nav-item m-2 hovering" [routerLink]="['/customerHome']">Home</div>
+                <div class="nav-item m-2 hovering dropdown">
+                    Pets ▼
+                    <div class="dropdown-menu">
+                        <a [routerLink]="['/singlePetCategory', 'Cats']" class="dropdown-item">Cats</a>
+                        <a [routerLink]="['/singlePetCategory', 'Dogs']" class="dropdown-item">Dogs</a>
+                        <a [routerLink]="['/singlePetCategory', 'Cows']" class="dropdown-item">Cows</a>
+                        <!-- <a  [routerLink]="['/singlePetCategory/Cats']" class="dropdown-item">Cats</a>
+                        <a  [routerLink]="['/singlePetCategory/Dogs']" class="dropdown-item" >Dogs</a>
+                        <a   [routerLink]="['/singlePetCategory/Cows']"class="dropdown-item">Cows</a> -->
+                        <i class="dropdown-item" [routerLink]="['/petCategories']">See more...</i>
+                    </div>
+                </div>
+               
+                <div class="nav-item m-2 hovering"  routerLink="/petfood">Pet Food</div> 
+                <div class="nav-item m-2 hovering dropdown">Services ▼
+                    <div class="dropdown-menu">
+                        <a  class="dropdown-item" [routerLink]="['/vaccination']">Vaccination</a>
+                        <!-- <a  class="dropdown-item" [routerLink]="['/petFood']">Pet Food</a> -->
+                    </div>
+                </div>
+
+            
+                <div class="nav-item m-2 hovering" routerLink="/gallery">Gallery</div>
+                <div class="nav-item m-2 hovering" routerLink="/footer">Help</div>
+                
+                <!-- <div class="nav-item ml-2">
+                    <form (ngSubmit)="onSearch()">
+                    <input type="search"   placeholder="Search breeds" 
+                    [(ngModel)]="searchTerm" 
+                    (ngModelChange)="loadPetBreeds($event)"  autofocus required>
+                    <i class="fa fa-search"></i> -->
+                   
+                    <!-- <button onclick="clearInput()">Clear</button> -->
+                    <!-- </form>
+                </div> -->
+            </div>
+ 
+            
+           
+        </div>
+       
+        <!-- <i class="bi bi-cart" style="color: black; font-weight: bold; font-size: 24px;" routerLink="/cart" ></i> -->
+        <!-- <i class="bi bi-cart" style="color: black; font-weight: bold; font-size: 24px;" routerLink="/cart" ></i> -->
+        <i class="bi bi-cart me-3" style="color: black; font-weight: bold; font-size: 24px;" routerLink="/cart"></i>
+
+
+            <div class="circle me-3" >{{cartItemsFromCartService==undefined?0:cartItemsFromCartService.length}}</div>
+            
+            <!-- <div class="circle">1</div>
+            <div class="circle">{{cartItemsFromCartService==undefined?0:cartItemsFromCartService.length}}</div> -->
+      <!-- <h2>{{cartLenth}}</h2> -->
+        <a class="btn btn-dark" (click)="userLogout()">Log Out</a>
+       
+    </div>
+   
+   
+</div>
+<style>
+    .circle{
+        background-color:black;
+        width:20px;
+        height:20px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        position:absolute;
+        right:103px;
+        top:15px;
+        color:white;
+    }
+</style>

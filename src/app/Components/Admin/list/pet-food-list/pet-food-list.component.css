@@ -1,0 +1,123 @@
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Styles for the table container */
+.container {
+    margin-top: 20px;
+}
+ 
+/* Styles for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+}
+ 
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.table th {
+    background-color: #000; /* Black background for headers */
+    color: #ffffff; /* White text color for headers */
+}
+ 
+.phone-number {
+    display: flex;
+    align-items: center;
+}
+.customer-name{
+    font-weight: bold;
+}
+ 
+ /* Filtering controls styling */
+/* .d-flex {
+    gap: 1rem;
+  }
+  
+  .form-control {
+    border-radius: 0.25rem;
+    box-shadow: none;
+  }
+  
+  .btn-secondary {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  } */
+  
+  /* Pagination controls styling */
+  /* .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination-controls .pagination {
+    margin: 0;
+  } */
+  
+/* Styling for the filtering section */
+.container {
+    padding: 0 15px; /* Adds some horizontal padding to container */
+}
+
+.d-flex {
+    gap: 10px; /* Adds spacing between the filter inputs and button */
+}
+
+.form-control {
+    border-radius: 0.25rem; /* Rounded corners for input fields */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    transition: border-color 0.2s, box-shadow 0.2s; /* Smooth transition for border color and shadow */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Blue border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Subtle shadow on focus */
+}
+
+.btn-secondary {
+    border-radius: 0.25rem; /* Rounded corners for buttons */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.btn-secondary:hover {
+    background-color: #6c757d; /* Slightly darker background on hover */
+    border-color: #5a6268; /* Darker border color on hover */
+}
+
+.table {
+    border-radius: 0.25rem; /* Rounded corners for table */
+    overflow: hidden; /* Ensures table's rounded corners are visible */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Light background for odd rows */
+}
+
+.pagination-container {
+    margin-top: 20px; /* Adds space above pagination controls */
+    text-align: center; /* Center-aligns pagination controls */
+}
+
+

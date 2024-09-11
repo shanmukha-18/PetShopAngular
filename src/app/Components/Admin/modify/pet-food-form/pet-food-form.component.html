@@ -1,0 +1,56 @@
+<app-admin-header></app-admin-header>
+<div class="body mb-5">
+    <div class="container-fluid d-flex justify-content-center align-items-center w-75">
+        <form [formGroup]="petFoodForm" (ngSubmit)="onSubmit()" class="container mt-4 bg-light w-50 p-3">
+            <h2 class="text-center">Pet Food Form</h2>
+            <div class="form-group">
+                <label for="name"> Food Name</label>
+                <input id="name" formControlName="name" class="form-control" />
+                <div *ngIf="petFoodForm.get('name')?.invalid && petFoodForm.get('name')?.touched" class="text-danger">
+                    <div *ngIf="petFoodForm.get('name')?.errors?.['required']">Food Name is mandatory.</div>
+                    <div *ngIf="petFoodForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="brand">Brand Name</label>
+                <input id="brand" formControlName="brand" class="form-control" />
+                <div *ngIf="petFoodForm.get('brand')?.invalid && petFoodForm.get('brand')?.touched" class="text-danger">
+                    <div *ngIf="petFoodForm.get('brand')?.errors?.['required']">Brand Name is mandatory.</div>
+                    <div *ngIf="petFoodForm.get('brand')?.errors?.['minlength']">Brand Name must be at least 3 characters long.</div>
+               
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="type">Food Type</label>
+                <input id="type" formControlName="type" class="form-control" />
+                <div *ngIf="petFoodForm.get('type')?.invalid && petFoodForm.get('type')?.touched" class="text-danger">
+                    <div *ngIf="petFoodForm.get('type')?.errors?.['required']">Food Type is mandatory.</div>
+                 
+               
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity </label>
+                <input id="quantity" formControlName="quantity" class="form-control" />
+                <div *ngIf="petFoodForm.get('quantity')?.invalid && petFoodForm.get('quantity')?.touched" class="text-danger">
+                    <div *ngIf="petFoodForm.get('quantity')?.errors?.['required']">Food Quantity is mandatory.</div>
+                    <div *ngIf="petFoodForm.get('quantity')?.errors?.['min']">Food Quantity is minimum 1</div>
+               
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="price">Food Price</label>
+                <input id="price" formControlName="price" class="form-control" />
+                <div *ngIf="petFoodForm.get('price')?.invalid && petFoodForm.get('price')?.touched" class="text-danger">
+                    <div *ngIf="petFoodForm.get('price')?.errors?.['required']">Food Price is mandatory.</div>
+                    <div *ngIf="petFoodForm.get('price')?.errors?.['min']">Minimum Food Price is 0</div>
+               
+                  </div>
+            
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="petFoodForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>

@@ -1,0 +1,130 @@
+<app-header></app-header>
+ 
+ <!-- <div class="my-corousal position-relative d-flex justify-content-center align-items-center">
+     <div class="position-absolute  w-100 d-flex justify-content-between">
+       <i class="bi bi-arrow-left-circle-fill ml-3 icon-size" (click)="corousalChanger('left')"></i>
+       <i class="bi bi-arrow-right-circle-fill mr-3 icon-size" (click)="corousalChanger('right')"></i>
+     </div>
+     <img [src]="corousalImages[crousalVal]" alt="dgrt" >
+   </div> -->
+ 
+   <!-- Carousel -->
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div *ngFor="let image of carouselImages; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="image" class="d-block w-100" alt="Slide {{ i + 1 }}">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+ 
+ 
+   
+   
+   
+   <!-- <div class="my-container mt-2 appearance">
+     <h2 class="my-container-header mt-3">Available for you</h2>
+     <div class="my-container-cards px-2">
+       <div class="card">
+         <div class="card-title">PetFood</div>
+         <img src="images/pf.jpg" alt="Pet Food"  [routerLink]="['/petfood']">
+       </div>
+       <div class="card">
+         <div class="card-title">PetServices</div>
+         <img src="images/ps.jpg" alt="Pet Services"  [routerLink]="['/vaccination']">
+       </div>
+       <div class="card">
+         <div class="card-title">PetCategories</div>
+         <img src="images/pc.jpg" alt="Pet Categories" [routerLink]="['/petCategories']">
+       </div>
+     </div>
+   </div> -->
+   <div class="my-container mt-2 appearance">
+     <h2 class="my-container-header mt-3">Available for you</h2>
+     <div class="my-container-cards px-2">
+       <div class="card bg-dark" [routerLink]="['/petfood']">
+         <img src="images/pf.jpg" class="card-img" alt="Pet Food" >
+         <div class="card-img-overlay gradient-overlay">
+           <h5 class="card-title">PetFood</h5>
+         </div>
+       </div>
+       <div class="card bg-dark" [routerLink]="['/vaccination']">
+         <img src="images/ps.jpg" class="card-img" alt="Pet Services" >
+         <div class="card-img-overlay gradient-overlay">
+           <h5 class="card-title">PetServices</h5>
+         </div>
+       </div>
+       <div class="card bg-dark" [routerLink]="['/petCategories']">
+         <img src="images/pc.jpg" class="card-img" alt="Pet Categories" >
+         <div class="card-img-overlay gradient-overlay">
+           <h5 class="card-title">PetCategories</h5>  
+         </div>
+       </div>
+     </div>
+   </div>
+   
+ 
+   <h2 class="my-container-header mt-3">New Arrivals In our Shop for you</h2>
+   <div class="container-fluid card-container d-flex flex-column appearance">
+     <!-- Video Section -->
+     <video class="dog_video" src="videos/dog.mp4" [routerLink]="['/singlePetCategory/Dogs']" autoplay loop></video>
+     
+     <!-- Section Heading -->
+     <h3 class="my-container-header">Dogs</h3>
+     
+     <!-- Grid Container for Cards -->
+     <div class="d-grid card-grid">
+       <!-- Iterate over displayedPets array to create a card for each pet -->
+       <div *ngFor="let pet of displayedPets" class="cat-card">
+         <img class="basic_card" [src]="pet.imageUrl || '/images/pc1.jpg'" alt="Pet image" height="100px">
+         <div class="content pl-2">
+           <div class="f-blod"><strong>{{ pet.name }}</strong></div>
+           <div class="f-blod breed"><p>{{ pet.breed }}</p></div>
+           <!-- <div class="d-flex">
+             Rs.{{ pet.price }}
+           </div> -->
+           <a class="btn btn-dark mb-2" [routerLink]="['/petDetails',pet.petId]">View Details</a>
+         </div>
+       </div>
+     </div>
+   </div>
+   
+   
+ 
+ <video class="cat_video" src="videos/cat.mp4" [routerLink]="['/singlePetCategory/Cats']" autoplay loop></video>
+ 
+ <!-- Section Heading for Cats -->
+ <div class="container-fluid card-container d-flex flex-column appearance">
+     <h3 class="my-container-header">Cats</h3>
+     
+     <!-- Grid Container for Cat Cards -->
+     <div class="d-grid card-grid">
+       <div *ngFor="let pet of displayedCats" class="cat-card">
+         <img class="basic_card" [src]="pet.imageUrl || '/images/pc2.jpg'" alt="Pet image" height="100px">
+         <div class="content pl-2">
+           <div class="f-blod"><strong>{{ pet.name }}</strong></div>
+           <div class="f-blod breed"><p>{{ pet.breed }}</p></div>
+           <!-- <div class="d-flex">
+             <div class="">Price: Rs.{{ pet.price }}</div>
+           </div> -->
+           <a class="btn btn-dark mb-2" [routerLink]="['/petDetails',pet.petId]">View Details</a>
+         </div>
+       </div>
+     </div>
+ </div>
+ 
+ 
+ <app-footer></app-footer>
+ <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

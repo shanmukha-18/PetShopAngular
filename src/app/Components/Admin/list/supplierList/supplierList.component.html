@@ -1,0 +1,69 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+    <br />
+    <h1 class="text-center mb-4">Available Suppliers</h1>
+    <br />
+    <div class="row">
+        <div class="col">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4">
+          <div class="mb-2 mb-md-0 me-md-3">
+              <input 
+                  type="text" 
+                  class="form-control" 
+                  placeholder="Search by name" 
+                  [(ngModel)]="name" 
+                  (ngModelChange)="searchByName($event)" 
+              />
+          </div>
+          <div class="mb-2 mb-md-0 me-md-3">
+              <input 
+                  type="text" 
+                  class="form-control" 
+                  placeholder="Filter by city" 
+                  [(ngModel)]="city" 
+                  (ngModelChange)="filterByCity($event)" 
+                  
+              />
+          </div>
+  
+          <div class="d-flex align-items-center">
+              <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+          </div>
+          </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Supplier Id</th>
+                        <th scope="col">Supplier Name</th>
+                        <th scope="col">Contact person</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Update</th>
+                    </tr>
+                </thead>
+                <tbody >
+  
+                  
+                    <tr *ngFor="let supplier of suppliers |paginate: { itemsPerPage: 10, currentPage: p}">
+                        <td>{{supplier.supplierId}}</td>
+                        <td class="supplier-name">{{supplier.name}}</td>
+                        <td>{{supplier.contactPerson}}</td>
+                        <td>{{supplier.phoneNumber}} </td>
+                        <td>{{supplier.email}}</td>
+                        <td>{{supplier.address.city}} ,{{supplier.address.state}}</td>
+                        <td><button class="btn btn-warning" [routerLink]="['/supplierFormUpdate',supplier.supplierId]"><i class="bi bi-pencil-square"></i></button></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination-container">
+              <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" [maxSize]="5" class="pagination"></pagination-controls>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+   

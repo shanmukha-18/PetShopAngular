@@ -1,0 +1,35 @@
+ <div class="body">
+<div class="w-100 d-flex justify-content-center align-items-center position-relative" style="height:100vh;">
+    <!-- <img src="bg2.jpg" alt="no image" class=" login-c-img"> -->
+    <div class="login-container position-absolute">
+        <h2 *ngIf="role=='admin'" >Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" formControlName="username" class="form-control" />
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
+              Username is required.
+            </div>
+          
+          </div>
+     
+          <div class="form-group">
+ 
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password" class="form-control" />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+              Password is required.
+            </div>
+            
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+          <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">Login</button>
+          
+          <button type="submit" class="btn btn-dark" style="margin-top: 10px;" [routerLink]="['/signUp']" routerLinkActive="router-link-active">SignUp</button>
+        </form>
+      </div>
+       
+</div>
+</div> 

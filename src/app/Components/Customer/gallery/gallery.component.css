@@ -1,0 +1,38 @@
+/* Container for the gallery */
+.gallery-container {
+    padding: 16px;
+    background: linear-gradient(135deg, #f8f8f8, #c9c5c5); /* Gradient background */
+  }
+ 
+  /* Grid layout for gallery cards */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with flexible columns */
+    gap: 16px; /* Space between cards */
+    align-items: start; /* Align items at the start of the grid cell */
+  }
+ 
+  /* Style for each gallery card */
+  .gallery-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  }
+ 
+  /* Style for the image background */
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+ 
+  /* Hover effect */
+  .gallery-card:hover {
+    transform: scale(1.1); /* Slightly enlarge card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent overlay on hover */
+  }

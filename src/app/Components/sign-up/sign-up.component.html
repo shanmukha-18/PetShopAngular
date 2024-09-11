@@ -1,0 +1,47 @@
+
+
+
+ <div class="body">
+  <div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <h2 style="text-align:center">Sign Up</h2>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input id="username" type="text" formControlName="username" class="form-control"
+          [ngClass]="{'is-invalid': !profileForm.get('username')?.valid && profileForm.get('username')?.touched}">
+        <div *ngIf="profileForm.get('username')?.invalid && profileForm.get('username')?.touched" class="invalid-feedback" style="color: red;">
+          Username is required and must be at least 4 characters long.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" class="form-control"
+          [ngClass]="{'is-invalid': !profileForm.get('password')?.valid && profileForm.get('password')?.touched}">
+        <div *ngIf="profileForm.get('password')?.invalid && profileForm.get('password')?.touched" class="invalid-feedback" style="color: red;">
+          Password is required and must be at least 8 characters long.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role:</label><br>
+        <input type="radio" id="admin" value="admin" formControlName="role" name="role">
+        <label for="admin">Admin</label><br>
+        <input type="radio" id="customer" value="customer" formControlName="role" name="role">
+        <label for="customer">Customer</label><br>
+        <div *ngIf="profileForm.get('role')?.invalid && profileForm.get('role')?.touched" class="invalid-feedback">
+          Role is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-dark mt-2" [disabled]="!profileForm.valid">Submit</button>
+      </div>
+
+      <div>
+        <p>For New Customers, Registration <a href="/customerForm">click here</a></p>
+      </div>
+    </form>
+  </div>
+</div>

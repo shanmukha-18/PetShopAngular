@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div  class="container">
+  <div class="row mb-4">
+    <div class="col-md-2">
+      <img src="/images/petcart.jpg" alt="Cart" class="img-fluid  cart rounded">
+    </div>
+    <div class="col-md-9" *ngIf="originalCartItems && originalCartItems.length;else emptyCart">
+      <h2 class="mb-4 mt-2" *ngIf="totalItems > 0;">Total Items: {{ totalItems }}</h2>
+
+      <!-- Display Cart Items -->
+      <!-- <div class="cart-items" *ngIf="cartItems.length > 0"> -->
+        <div class="card mb-3" *ngFor="let item of originalCartItems">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img *ngIf="item.imageUrl" [src]="item.imageUrl" alt="{{ item.name }}" class="card-img">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Item Id: {{ item?.foodId !== undefined ? item?.foodId : item.petId }}
+                </h5>
+                <h5 class="card-title">{{ item.name }}</h5>
+              
+                <p class="card-text">Breed: {{ item.breed }}</p>
+                <p class="card-text">Age: {{ item.age }} years</p>
+                <p class="card-text">Price: {{ item.price | currency:'INR' }}</p>
+                <!-- <p class="card-text">Price: {{ item.price| currency:'INR' }}</p> -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <button class="btn btn-secondary" [disabled]="item?.itemQ <= 1" (click)="increase('dec', item)">-</button>
+                  <h2 class="m-0">{{ item?.itemQ }}</h2>
+                  <button class="btn btn-primary" (click)="increase('inc', item)">+</button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                  <button *ngIf="item.petId" class="btn btn-danger" (click)="removeFromCart(item.petId, item.name)">Remove</button>
+                  <button *ngIf="item.foodId" class="btn btn-danger" (click)="removeFromCart(item.foodId, item.name)">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary col-md-8">
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal:</span>
+          <span>{{ subtotal | currency:'INR' }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>GST (9%):</span>
+          <span>{{ gst.toFixed(2) | currency:'INR' }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span>SGST (9%):</span>
+          <span>{{ sgst.toFixed(2) | currency:'INR' }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-4">
+          <span>Total Price:</span>
+          <span>{{ totalPrice.toFixed(2) | currency:'INR' }}</span>
+        </div>
+        <button class="btn btn-success btn-lg w-100"  (click)="buyNow()">Buy Now</button>
+      </div>
+
+      <ng-template #emptyCart>
+        <div class="col-md-8">
+        <div class="alert alert-info">
+          Your cart is empty.
+        </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+<!-- </div> -->
+
+<app-footer></app-footer>

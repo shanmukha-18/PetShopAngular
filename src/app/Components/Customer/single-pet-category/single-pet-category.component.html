@@ -1,0 +1,29 @@
+
+
+
+
+  <app-header></app-header>
+  
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let pet of pets">
+        <div class="card shadow-lg rounded" >
+          <img [src]="pet.imageUrl" class="card-img-top" alt="{{pet.name}}">
+          <div class="card-body">
+            <h4 class="card-title">{{pet.name}}</h4>
+            <p class="card-text"><strong>Breed:</strong> {{pet.breed}}</p>
+            <p class="card-text"><strong>Category:</strong> {{pet.category.name}}</p>
+            <p class="card-text"><strong>Age:</strong> {{pet.age}}</p>
+            <p class="card-text"><strong>Price:</strong> {{pet.price | currency:"INR"}}</p>
+            <!-- <p class="card-text">{{pet.description}}</p> -->
+            <div class="d-flex justify-content-between mt-3">
+              <button class="btn btn-dark" [routerLink]="['/petDetails',pet.petId]" routerLinkActive="router-link-active" >View Details</button>
+              <!-- <button class="btn btn-warning">Buy Now</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>

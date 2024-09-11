@@ -1,0 +1,16 @@
+<div class="navbar navbar-expand-lg  bg-light">
+    <div class="container">
+        <a class="navbar-brand"  [routerLink]="['/ownerHome']" >
+            <img src="/images/logo.png" alt="Logo" width="60" height="50">
+        </a>
+        <div class="collapse navbar-collapse d-flex justify-content-between">
+            <a class="nav-item nav-link admin-home" [routerLink]="['/ownerHome']">Home</a>
+            <div class="navbar-nav mx-auto">
+               
+                <a class="nav-item nav-link admin-dashboard">Admin Dashboard</a>
+            </div>
+            <a class="btn btn-dark ml-auto" (click)="userLogout()">Log Out</a>
+        </div>
+    </div>
+</div>
+

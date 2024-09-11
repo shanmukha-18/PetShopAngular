@@ -1,0 +1,28 @@
+.container {
+    margin-top: 20px;
+}
+.transaction-card {
+    margin-top: 10px;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.transaction-card img {
+    margin-top: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+.transaction-card .btn {
+    width: 100%;
+}
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+}
+img{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px;
+}

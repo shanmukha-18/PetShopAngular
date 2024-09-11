@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="container">
+  <br />
+  <h1 class="text-center mb-4">Pet's Food</h1>
+  <br />
+
+  <div class="row">
+      <div class="col">
+          
+          <!-- Search and Filter Controls -->
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4">
+              <div class="mb-2 mb-md-0 me-md-3">
+                  <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Search by name" 
+                      [(ngModel)]="name" 
+                      (ngModelChange)="searchByName()"
+                  />
+              </div>
+              <div class="mb-2 mb-md-0 me-md-3">
+                  <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Filter by brand" 
+                      [(ngModel)]="brand" 
+                      (ngModelChange)="filterByBrand()"
+                  />
+              </div>
+            
+              <div class="d-flex align-items-center">
+                  <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+              </div>
+          </div>
+
+          <!-- Pet Food Table -->
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Brand</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Add to Cart</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let petFood of petFoods | paginate: { itemsPerPage: 10, currentPage: p }">
+                      <td>{{ petFood.name }}</td>
+                      <td>{{ petFood.brand }}</td>
+                      <td style="color: green;">{{ petFood.price | currency:"INR" }}</td>
+                      <td>{{ petFood.quantity }}</td>
+                      <td>{{ petFood.type }}</td>
+                      <td>
+                          <button class="btn btn-dark" (click)="addPetFoodToCart(petFood)">
+                              Add to Cart
+                          </button>
+                      </td>
+                  </tr>
+                 
+              </tbody>
+          </table>
+          </div>
+          
+          <!-- Pagination Controls -->
+         
+          <div class="pagination-container">
+              <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" [maxSize]="5" class="pagination"></pagination-controls>
+          </div>
+      </div>
+  </div>
+
+
+ 
+  <app-footer></app-footer>

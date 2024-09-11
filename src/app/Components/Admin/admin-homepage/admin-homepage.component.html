@@ -1,0 +1,125 @@
+<app-admin-header></app-admin-header>
+<!-- Admin Dashboard -->
+<div class="body">
+    <div class="dashboard-container">
+      <!-- <img src="images/logo.png" alt="logo" class="logo"/> -->
+      <h3 style="margin-bottom: 20px;">Welcome Admin!</h3>
+      <div class="row g-4">
+      
+        <!-- First Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="images/pets.jpg" alt="Pets">
+            <div class="card-body">
+              <h5 class="card-title">Pets</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn-secondary w-100" [routerLink]="['/petList']">List Of Pets</button>
+                </li>
+                <li class="list-group-item text-center">
+                  <button class="btn btn-dark w-100" [routerLink]="['/petForm']">Add a Pet</button>
+                </li>
+                <!-- <li class="list-group-item text-center">
+                  <button class="btn b3 w-100">Update a Pet</button>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Second Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="images/supplier.jpg" alt="Suppliers"/>
+            <div class="card-body">
+              <h5 class="card-title">Suppliers</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-secondary w-100" [routerLink]="['/supplierList']">List Of Suppliers</button>
+                </li>
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-dark w-100" [routerLink]="['/supplierForm']">Add a Supplier</button>
+                </li>
+                <!-- <li class="list-group-item text-center">
+                  <button class="btn b3 w-100">Update a Supplier</button>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Third Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="/images/petcustomer.jpg" alt="Customers">
+            <div class="card-body">
+              <h5 class="card-title">Customers</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-secondary w-100" [routerLink]="['/customerList']">List Of Customers</button>
+                </li>
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-dark w-100" [routerLink]="['/customerForm']">Add a Customer</button>
+                </li>
+                <!-- <li class="list-group-item text-center">
+                  <button class="btn b3 w-100">Update a Customer</button>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Fourth Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="images/transaction.jpg" alt="Transaction">
+            <div class="card-body">
+              <h5 class="card-title">Transactions</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-secondary w-100" [routerLink]="['/transactionList']">List Of Transactions</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Fifth Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="images/vaccine.png" alt="Vaccinations">
+            <div class="card-body">
+              <h5 class="card-title">Vaccinations</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-secondary w-100" [routerLink]="['/vaccinationList']" routerLinkActive="router-link-active">List Of Vaccinations</button>
+                </li>
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-dark w-100" [routerLink]="['/vaccinationForm']">Add Vaccination</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Sixth Card -->
+        <div class="col-md-4">
+          <div class="card dashboard-card">
+            <img class="card-img-top" src="/images/pf.jpg" alt="Pet Food">
+            <div class="card-body">
+              <h5 class="card-title">Pet Food</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-secondary w-100" [routerLink]="['/petFoodList']" routerLinkActive="router-link-active">List Of Pet Food</button>
+                </li>
+                <li class="list-group-item text-center">
+                  <button class="btn btn btn-dark w-100" [routerLink]="['/petFoodForm']">Add Pet Food</button>
+                </li>  
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    

@@ -1,0 +1,27 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    overflow: hidden; /* Ensure the content does not overflow the card */
+  }
+  
+  .card-img-top {
+    height: 180px;
+    object-fit:fill;
+
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  

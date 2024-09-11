@@ -1,0 +1,49 @@
+
+img{
+    
+    margin: 15px auto; 
+    margin-top:3.5rem;
+    padding: 3px;
+    border: 5px solid gray; /* Creates a black border around the image */
+    border-radius: 10px; /* Optional: rounds the corners of the border */
+    height: 270px;
+    width: 300px;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+ h4{
+    font-weight: 600;
+    text-align: center;
+ }
+
+ .container{
+    padding-bottom:3rem;
+ }
+
+.details{
+    padding-left: 5rem;
+}
+
+.card{
+    margin: 20px;
+}
+ 
+.card-title{
+    text-align: center;
+}
+.button-container {
+    position: absolute;
+    right: 4rem; 
+    padding-top:1rem; 
+}
+ 
+.carousel-inner img {
+    max-width: 50%; 
+    max-height: 400px; 
+    object-fit: contain; 
+    margin: auto; 
+  }
+ 
+.carousel-control-prev{
+    color: black;
+}

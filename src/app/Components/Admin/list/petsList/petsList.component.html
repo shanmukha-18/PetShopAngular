@@ -1,0 +1,94 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+  <h1 class="text-center mb-4">Available Pets</h1>
+
+  <!-- Filter and Search Section -->
+  <div class="row mb-4">
+    <!-- Category Filter -->
+    <div class="col-md-3">
+      <input 
+        type="text" 
+        class="form-control mb-2" 
+        placeholder="Filter by category" 
+        [(ngModel)]="category" 
+        (ngModelChange)="filterByCategory()" 
+      />
+    </div>
+
+    <!-- Pet ID Filter -->
+    <!-- <div class="col-md-3">
+      <input 
+        type="number" 
+        class="form-control mb-2" 
+        placeholder="Enter Pet ID" 
+        [(ngModel)]="petId" 
+        (ngModelChange)="getDetailsByPetId()" 
+      />
+    </div> -->
+
+    <!-- Clear Filters Button -->
+    <div class="col-md-9 d-flex align-items-end">
+      <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+    </div>
+  </div>
+
+  <!-- Pet Details Section -->
+  <div *ngIf="selectedPetId" class="row mb-4">
+    <div class="col-md-6">
+      <h2>Food Information</h2>
+      <ul class="list-group">
+        <li *ngFor="let food of foodInfo" class="list-group-item">
+          {{ food }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Suppliers</h2>
+      <ul class="list-group">
+        <li *ngFor="let supplier of suppliers" class="list-group-item">
+          {{ supplier }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pets List Table -->
+  <div class="row mb-4">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Pet Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Pet Name</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Age</th>
+            <th scope="col">Price</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pet of pets | paginate: { itemsPerPage: 10, currentPage: p }" (click)="onPetSelect(pet.petId)" [class.selected]="pet.petId === selectedPetId">
+            <td>{{pet.petId}}</td>
+            <td><img [src]="pet.imageUrl" alt="pet image" class="pet-image"></td>
+            <td class="pet-name">{{pet.name}}</td>
+            <td>{{pet.breed}}</td>
+            <td>{{pet.age}} years</td>
+            <td class="pet-price" style="color: green;">{{pet.price | currency:"INR"}}</td>
+            <td>
+              <button class="btn btn-warning" [routerLink]="['/petFormUpdate', pet.petId]">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination Controls -->
+      <div class="pagination-container">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next" [maxSize]="5" class="pagination"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

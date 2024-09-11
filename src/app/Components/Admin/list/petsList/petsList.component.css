@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the table container */
+.container {
+  margin-top: 20px;
+}
+
+/* Styles for the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #000; /* Black background for headers */
+  color: #ffffff; /* White text color for headers */
+}
+
+
+
+/* Styling for pet images in the table */
+.pet-image {
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 50%; /* Make the image circular */
+}
+
+/* Styling for the price column */
+.pet-price {
+  font-weight: bold;
+
+}
+.pet-name{
+  font-weight: bold;
+}
+
+/* pet-list.component.css */
+/* pet-list.component.css */
+
+.container {
+  margin-top: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table .pet-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.table .pet-name {
+  font-weight: bold;
+}
+
+
+
+.selected {
+  background-color: #f0f8ff;
+}
+
+.pagination-container {
+  margin-top: 20px;
+}
+.pagination::selection{
+  background-color: black;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.list-group-item {
+  border-radius: 0;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-secondary {
+  margin-left: auto;
+}
+
+.clear-filters-btn {
+  font-size: 16px;
+}

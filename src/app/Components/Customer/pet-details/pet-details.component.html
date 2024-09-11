@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+
+<div class="container ">
+    <!-- <h4 class="card-title pt-2">Pet Details</h4> -->
+
+    <!-- <div class="card" style="width: 94%;" > -->
+        
+        <div class="row g-4">
+          <div class="col-md-3"  >
+              <img [src]="pet.imageUrl" class="img-fluid rounded-start" alt="Pet Image" >
+            </div>
+            <div class=" details col-md-9">
+                <div class="card-body pt-5">
+                    <h4>{{pet.name}}</h4>
+              <p><strong>Breed : </strong> {{pet.breed}} </p>
+              <p><strong>Category : </strong> {{pet.category.name}} </p>
+              <p><strong>Age : </strong>{{pet.age}} </p>
+              <p><strong>price : </strong> {{pet.price | currency:"INR"}} </p>
+              <p class="card-text"><strong>Description : </strong>{{pet.description}}</p>
+              
+                
+            </div>
+            <div class="button-container">
+                <button class="btn btn-dark"  (click)="addPetToCart(pet)">Add To Cart</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <button class="btn btn-dark">Buy Now</button> -->
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- </div> -->
+<app-footer></app-footer>

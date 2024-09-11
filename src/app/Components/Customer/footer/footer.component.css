@@ -1,0 +1,89 @@
+footer {
+  background-color: #343a40; /* Dark background */
+ 
+}
+ 
+footer h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+ 
+footer p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #ced4da; /* Lighter text color for address */
+}
+ 
+footer .btn {
+  background-color: #ffffff; /* Light background for buttons */
+  color: #343a40; /* Dark text color for buttons */
+}
+ 
+footer .btn:hover {
+  background-color: #e9ecef; /* Light gray on hover */
+  color: #343a40; /* Dark text color on hover */
+}
+ 
+footer .text-white {
+  color: #ffffff;
+}
+ 
+footer .text-white:hover {
+  color: #adb5bd; /* Light gray on hover */
+}
+ 
+footer a {
+  text-decoration: none;
+  color: #ffffff; /* Ensure text color is white for links */
+}
+ 
+footer a .fa {
+  margin-right: 8px; /* Spacing between icon and text */
+}
+ 
+/* App icon styling */
+.app-icon {
+  width: 120px; /* Adjust the size as needed */
+  height: auto;
+  vertical-align: middle; /* Align images with text */
+}
+ 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.ml{
+  margin-left: 5px;
+}
+/* Adjust the Newsletter Signup Section positioning */
+.newsletter-signup {
+  padding: 15px; /* Padding around the section */
+  border-radius: 8px; /* Rounded corners */
+  margin-left: -15px; /* Move the section slightly to the left */
+}
+ 
+.newsletter-signup h5 {
+  font-size: 1.65rem; /* Adjusted font size */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+ 
+.newsletter-signup .form-control {
+  border-radius: 4px; /* Rounded corners for the input */
+  border: 1px solid #ced4da; /* Light border for the input field */
+  padding: 10px; /* Padding inside the input field */
+  font-size: 0.875rem; /* Adjusted font size */
+}
+ 
+.newsletter-signup .input-group-append .btn {
+  border-radius: 4px; /* Rounded corners for the button */
+  border: 1px solid #ced4da; /* Light border for the button */
+  background-color: #ffffff; /* Light background for the button */
+  color: #343a40; /* Dark text color for the button */
+  padding: 5px 10px; /* Reduced padding for a smaller button */
+  font-size: 0.875rem; /* Adjusted font size */
+}
+ 
+.newsletter-signup .input-group-append .btn:hover {
+  background-color: #e9ecef; /* Light gray on hover */
+  color: #343a40; /* Dark text color on hover */
+}

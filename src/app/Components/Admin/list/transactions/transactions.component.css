@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the table container */
+.container {
+  margin-top: 20px;
+}
+
+/* Styles for the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #000; /* Black background for headers */
+  color: #ffffff; /* White text color for headers */
+}
+
+.status-completed {
+  color: #28a745; /* Green for completed */
+}
+
+.status-failed {
+  color: #dc3545; /* Red for failed */
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.customer-name {
+  font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center pagination controls */
+}
+
+.pagination-controls .pagination {
+  border: none; /* Remove default borders */
+  display: flex;
+}
+
+.pagination-controls .page-item {
+  margin: 0 5px; /* Space between page numbers */
+}
+
+.pagination-controls .page-link {
+  border-radius: 0; /* Optional: remove rounded corners */
+  padding: 10px 15px; /* Adjust padding */
+}
+
+.btn-secondary {
+  margin-top: 10px;
+}
+
+/* Ensure filters and button align properly */
+.row.mb-4 {
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+}
+
+.col-md-4 {
+  margin-bottom: 10px; /* Space between columns */
+}
+
+.col-md-4.d-flex {
+  display: flex;
+  align-items: flex-end; /* Align button to the bottom */
+}

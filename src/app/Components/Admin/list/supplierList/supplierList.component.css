@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Styles for the table container */
+.container {
+    margin-top: 20px;
+}
+ 
+/* Styles for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+}
+ 
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.table th {
+    background-color: #000; /* Black background for headers */
+    color: #ffffff; /* White text color for headers */
+}
+ 
+.phone-number {
+    display: flex;
+    align-items: center;
+}
+.supplier-name{
+    font-weight: bold;
+}
+
+/* Filtering controls styling */
+.d-flex {
+    gap: 10px;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+.pagination-container {
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    justify-content: center;
+  }
+
+
+

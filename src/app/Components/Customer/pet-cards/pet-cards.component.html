@@ -1,0 +1,23 @@
+
+<div class="row g-4">
+    <div class="col-md-4" *ngFor="let pet of pets">
+        
+<div class="container mt-4">
+    <div class="row g-4">
+        <div class="col-md-4" >
+            <div class="card" style="width: 18rem;">
+                <img [src]="pet.imageUrl" class="card-img-top" alt="" style="object-fit: contain;">
+                <div class="card-body">
+                    <h5 class="card-title">{{pet.name}}</h5>
+                    
+                    <h6 class="card-subtitle mb-2 text-muted">{{pet.price }}</h6>
+    
+                    <button type="button" class="btn btn-info" (click)="viewPetDetails(pet.petId)">View Details</button>
+    
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    </div>
+</div>

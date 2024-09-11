@@ -1,0 +1,47 @@
+
+    <app-admin-header></app-admin-header>
+    <div class="container mt-5 mb-5">
+        <div class="form-container bg-light p-4 rounded shadow" style="max-width: 600px; margin: auto; background-color: #f8f9fa;">
+            <div class="form-header text-center mb-4">
+                <h2 class="text-dark">Pet Vaccination Form</h2>
+            </div>
+            <form [formGroup]="vaccinationForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name" class="text-secondary">Vaccination Name</label>
+                    <input id="name" formControlName="name" class="form-control" placeholder="Enter Vaccination Name"/>
+                    <div *ngIf="vaccinationForm.get('name')?.invalid && vaccinationForm.get('name')?.touched" class="text-danger">
+                        <div *ngIf="vaccinationForm.get('name')?.errors?.['required']">Vaccination Name is mandatory.</div>
+                        <div *ngIf="vaccinationForm.get('name')?.errors?.['minlength']">Vaccination Name must be at least 3 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="text-secondary">Description</label>
+                    <textarea id="description" formControlName="description" class="form-control" rows="3" placeholder="Enter Vaccination Description"></textarea>
+                    <div *ngIf="vaccinationForm.get('description')?.invalid && vaccinationForm.get('description')?.touched" class="text-danger">
+                        <div *ngIf="vaccinationForm.get('description')?.errors?.['required']">Vaccination Description is mandatory.</div>
+                        <div *ngIf="vaccinationForm.get('description')?.errors?.['minlength']">Vaccination Description must be at least 3 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="available" class="text-secondary">Availability</label>
+                    <input id="available" formControlName="available" type="number" class="form-control" placeholder="Enter Availability"/>
+                    <div *ngIf="vaccinationForm.get('available')?.invalid && vaccinationForm.get('available')?.touched" class="text-danger">
+                        <div *ngIf="vaccinationForm.get('available')?.errors?.['required']">Availability is mandatory.</div>
+                        <div *ngIf="vaccinationForm.get('available')?.errors?.['min']">Minimum Availability is 1.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="text-secondary">Vaccination Price</label>
+                    <input id="price" formControlName="price" type="number" class="form-control" placeholder="Enter Vaccination Price"/>
+                    <div *ngIf="vaccinationForm.get('price')?.invalid && vaccinationForm.get('price')?.touched" class="text-danger">
+                        <div *ngIf="vaccinationForm.get('price')?.errors?.['required']">Vaccination Price is mandatory.</div>
+                        <div *ngIf="vaccinationForm.get('price')?.errors?.['min']">Minimum Vaccination Price is 0.</div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="vaccinationForm.invalid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
